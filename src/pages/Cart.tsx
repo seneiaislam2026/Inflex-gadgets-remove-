@@ -123,33 +123,33 @@ export default function Cart() {
         {/* Order summary */}
         <section className="mt-16 bg-slate-50 rounded-[2.5rem] px-6 py-8 sm:p-10 lg:mt-0 lg:col-span-5 border border-slate-200 shadow-xl relative overflow-hidden">
            <div className="absolute top-0 right-0 w-64 h-64 bg-emerald-500 rounded-full blur-[100px] opacity-10 pointer-events-none"></div>
-          <h2 className="text-2xl font-extrabold text-slate-900 tracking-tight">Order Summary</h2>
+          <h2 className="text-xl font-extrabold text-slate-900 tracking-tight">Order Summary</h2>
 
-          <dl className="mt-8 space-y-6 text-sm text-slate-600">
+          <dl className="mt-6 space-y-4 text-sm text-slate-600">
             <div className="flex items-center justify-between">
-              <dt className="text-base font-medium">Subtotal</dt>
-              <dd className="text-lg font-bold text-slate-900">৳{cartTotal().toFixed(2)}</dd>
+              <dt className="text-sm font-medium">Subtotal</dt>
+              <dd className="text-base font-bold text-slate-900">৳{cartTotal().toFixed(2)}</dd>
             </div>
-            <div className="flex items-center justify-between border-t border-slate-200 pt-6">
-              <dt className="flex items-center text-base font-medium">Delivery Fee</dt>
-              <dd className="font-bold text-slate-500 text-xs uppercase tracking-widest bg-slate-200/50 px-3 py-1 rounded-lg">Calculated at checkout</dd>
+            <div className="flex items-center justify-between border-t border-slate-200 pt-4">
+              <dt className="flex items-center text-sm font-medium">Delivery Fee</dt>
+              <dd className="font-bold text-slate-500 text-[10px] sm:text-xs uppercase tracking-widest bg-slate-200/50 px-2 py-1 rounded-md">Calculated at checkout</dd>
             </div>
-            <div className="flex items-center justify-between border-t border-slate-900 pt-6">
-              <dt className="text-xl font-black text-slate-900">Total</dt>
-              <dd className="text-3xl font-black text-emerald-600 tracking-tight">৳{cartTotal().toFixed(2)}</dd>
+            <div className="flex items-center justify-between border-t border-slate-900 pt-4">
+              <dt className="text-base font-black text-slate-900">Total</dt>
+              <dd className="text-xl sm:text-2xl font-black text-emerald-600 tracking-tight">৳{cartTotal().toFixed(2)}</dd>
             </div>
           </dl>
 
-          <div className="mt-8">
+          <div className="mt-6">
             <button
               onClick={handleCheckout}
-              className="w-full bg-slate-900 rounded-2xl shadow-xl py-5 px-4 text-lg font-black text-white hover:bg-slate-800 transition active:scale-[0.98] flex items-center justify-center group"
+              className="w-full bg-slate-900 rounded-xl shadow-md py-3.5 px-4 text-base font-bold text-white hover:bg-slate-800 transition active:scale-[0.98] flex items-center justify-center group"
             >
-              Proceed to Checkout <ArrowRight className="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform"/>
+              Proceed to Checkout <ArrowRight className="ml-2 w-4 h-4 group-hover:translate-x-1 transition-transform"/>
             </button>
           </div>
-          <div className="mt-6 text-center">
-             <Link to="/shop" className="sm:hidden inline-flex items-center text-sm font-bold text-emerald-600 hover:text-emerald-700 uppercase tracking-widest transition">
+          <div className="mt-4 text-center">
+             <Link to="/shop" className="sm:hidden inline-flex items-center text-xs font-bold text-emerald-600 hover:text-emerald-700 uppercase tracking-widest transition">
                Continue Shopping
              </Link>
           </div>

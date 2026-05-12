@@ -1,6 +1,6 @@
 import React, { useState, useRef, useEffect } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
-import { ShoppingCart, User, Search, Menu, X, Camera, MessageSquare } from 'lucide-react';
+import { ShoppingCart, User, Search, Menu, X, Camera, MessageSquare, Star } from 'lucide-react';
 import { useAuthStore } from '../store/authStore.ts';
 import { useCartStore } from '../store/cartStore.ts';
 import { useBannerStore } from '../store/bannerStore.ts';
@@ -83,15 +83,20 @@ export default function Navbar() {
               <Menu className="h-6 w-6" />
             </button>
 
-            <Link to="/" className="flex items-center gap-2 sm:gap-3">
-              {logoUrl ? (
-                 <img src={logoUrl} alt="Inflex Gadgets" className="h-[50px] sm:h-[60px] lg:h-[70px] w-auto object-contain drop-shadow-sm" />
-              ) : (
-                 <>
-                   <div className="w-8 h-8 md:w-10 md:h-10 bg-gradient-to-tr from-emerald-500 to-teal-600 rounded-lg flex items-center justify-center font-bold text-white shadow-lg shadow-emerald-500/20">iG</div>
-                   <span className="text-xl sm:text-2xl font-bold tracking-tight text-slate-900">Inflex<span className="text-emerald-600 font-medium tracking-normal">Gadgets</span></span>
-                 </>
-              )}
+            <Link to="/" className="flex items-center gap-2">
+                 <div className="flex flex-col items-center justify-center">
+                    <div className="flex items-center justify-center gap-0.5 text-orange-500 font-extrabold italic text-xl tracking-tighter leading-none mb-0.5">
+                       <span>i</span>
+                       <span className="text-orange-400">G</span>
+                       <Star className="w-2.5 h-2.5 fill-orange-400 text-orange-400 -mt-2" />
+                    </div>
+                    <span className="text-xl sm:text-2xl font-black tracking-widest text-slate-900 uppercase leading-none">Inflex</span>
+                    <div className="flex items-center gap-1 mt-0.5">
+                       <div className="h-[1px] w-3 bg-orange-400"></div>
+                       <span className="text-[8px] sm:text-[9px] text-orange-400 font-bold uppercase tracking-[0.2em] leading-none">Gadgets</span>
+                       <div className="h-[1px] w-3 bg-orange-400"></div>
+                    </div>
+                 </div>
             </Link>
           </div>
 

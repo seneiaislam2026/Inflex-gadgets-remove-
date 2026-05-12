@@ -18,7 +18,8 @@ import {
   Headset,
   Globe,
   ChevronRight,
-  LogOut
+  LogOut,
+  Star
 } from 'lucide-react';
 import { motion, AnimatePresence } from 'motion/react';
 import { auth } from '../lib/firebase.ts';
@@ -87,14 +88,19 @@ export default function Sidebar({ isOpen, onClose }: SidebarProps) {
             {/* Header */}
             <div className="sticky top-0 bg-white z-10 flex items-center justify-between px-6 py-4 border-b border-slate-100">
               <Link to="/" onClick={onClose} className="flex items-center gap-2">
-                {logoUrl ? (
-                   <img src={logoUrl} alt="Inflex Gadgets" className="h-[40px] sm:h-[50px] w-auto object-contain drop-shadow-sm" />
-                ) : (
-                   <>
-                     <div className="w-8 h-8 bg-gradient-to-tr from-emerald-500 to-teal-600 rounded-lg flex items-center justify-center font-bold text-white shadow-lg">iG</div>
-                     <span className="text-xl font-bold tracking-tight text-slate-900">Inflex<span className="text-emerald-600 font-medium">Gadgets</span></span>
-                   </>
-                )}
+                 <div className="flex flex-col items-center justify-center">
+                    <div className="flex items-center justify-center gap-0.5 text-orange-500 font-extrabold italic text-[16px] tracking-tighter leading-none mb-0.5">
+                       <span>i</span>
+                       <span className="text-orange-400">G</span>
+                       <Star className="w-2 h-2 fill-orange-400 text-orange-400 -mt-1.5" />
+                    </div>
+                    <span className="text-lg sm:text-xl font-black tracking-widest text-slate-900 uppercase leading-none">Inflex</span>
+                    <div className="flex items-center gap-1 mt-0.5">
+                       <div className="h-[1px] w-2 bg-orange-400"></div>
+                       <span className="text-[7px] sm:text-[8px] text-orange-400 font-bold uppercase tracking-[0.2em] leading-none">Gadgets</span>
+                       <div className="h-[1px] w-2 bg-orange-400"></div>
+                    </div>
+                 </div>
               </Link>
               <button 
                 onClick={onClose}
